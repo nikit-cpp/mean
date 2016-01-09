@@ -1,21 +1,40 @@
 <!DOCTYPE>
-<html ng-app>
+<html ng-app="myApp">
 <head>
 	<title>Contact list app for pwn this wrld!!11</title>
 	<script src="angular/angular.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css"/>
 
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.css"/>
+
+	<script src="jquery/dist/jquery.js"/>
 
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+	<script src="bootstrap/dist/js/bootstrap.js"></script>
+	<script src="controllers/controller.js"></script>
 </head>
 <body>
-	<h1>Ха 1</h1>
-	<input ng-model="tstModel">
-	{{tstModel}}
-	</input>
+	
+	<div class = "container" ng-controller="NikitaAppController">
+		<h1>Контакты</h1>
+
+		<input ng-model="tstModel">
+		{{tstModel}}
+		</input>
+		
+		<table class = "table">
+			<thead>
+				<tr>
+					<th>Имя</th>
+					<th>Почта</th>
+					<th>Телефон</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	
+	
 </body>
 </html>
