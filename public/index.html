@@ -20,9 +20,9 @@
 	<div class = "container" ng-controller="NikitaAppController">
 		<h1>Контакты</h1>
 
-		<input ng-model="tstModel">
-		{{tstModel}}
+		<input ng-model="tstModel" placeholder="test angular">
 		</input>
+		{{tstModel}}
 		
 		<table class = "table">
 			<thead>
@@ -32,6 +32,14 @@
 					<th>Телефон</th>
 				</tr>
 			</thead>
+			
+			<tbody>
+				<tr ng-repeat="contact in contactList">
+					<td>{{contact.name}}</td>
+					<td>{{contact.email}}</td>
+					<td>{{contact.number}}</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 	
