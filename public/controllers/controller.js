@@ -7,7 +7,9 @@ var myApp = angular.module('myApp', []);
 
 
 myApp.controller('NikitaAppController', ['$scope', '$http',
+
     function ($scope, $http){
+        $scope.contact = {};
         console.log("That is controller.");
 
         $http.get('/contactlist2').success(
@@ -16,6 +18,12 @@ myApp.controller('NikitaAppController', ['$scope', '$http',
                 $scope.contactList3 = response;
             }
         );
+
+        $scope.addContact = function(){
+            console.log($scope.contact);
+        };
+
     }
+
 ]);
 

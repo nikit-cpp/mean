@@ -20,10 +20,6 @@
 	<div class = "container" ng-controller="NikitaAppController">
 		<h1>Контакты</h1>
 
-		<input ng-model="tstModel" placeholder="test angular">
-		</input>
-		{{tstModel}}
-		
 		<table class = "table">
 			<thead>
 				<tr>
@@ -35,17 +31,19 @@
 			</thead>
 			
 			<tbody>
-				<tr>
-					<td><input placeholder="Имя" class="form-control" ng-mpdel="contact.name"/></td>
-					<td><input placeholder="Емейл" class="form-control" ng-mpdel="contact.email"/></td>
-					<td><input placeholder="Телефон" class="form-control" ng-mpdel="contact.number"/></td>
-				</tr>
-
 				<tr ng-repeat="contact in contactList3">
 					<td>{{contact.name}}</td>
 					<td>{{contact.email}}</td>
 					<td>{{contact.number}}</td>
 				</tr>
+
+				<tr>
+					<td><input placeholder="Имя" class="form-control" ng-model="contact.name"/></td>
+					<td><input placeholder="Емейл" class="form-control" ng-model="contact.email"/></td>
+					<td><input placeholder="Телефон" class="form-control" ng-model="contact.number"/></td>
+					<td><button class="btn btn-primary" ng-click="addContact()">Добавить контакт</button></td>
+				</tr>
+
 			</tbody>
 		</table>
 	</div>
