@@ -21,6 +21,9 @@ myApp.controller('NikitaAppController', ['$scope', '$http',
 
         $scope.addContact = function(){
             console.log($scope.contact);
+            $http.post('/contactlist2', $scope.contact).success(function(resp){
+                console.log(resp);
+            });
         };
 
     }
