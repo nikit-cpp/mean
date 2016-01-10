@@ -30,10 +30,17 @@
 					<th>Имя</th>
 					<th>Почта</th>
 					<th>Телефон</th>
+					<th>Экшн</th>
 				</tr>
 			</thead>
 			
 			<tbody>
+				<tr>
+					<td><input placeholder="Имя" class="form-control" ng-mpdel="contact.name"/></td>
+					<td><input placeholder="Емейл" class="form-control" ng-mpdel="contact.email"/></td>
+					<td><input placeholder="Телефон" class="form-control" ng-mpdel="contact.number"/></td>
+				</tr>
+
 				<tr ng-repeat="contact in contactList3">
 					<td>{{contact.name}}</td>
 					<td>{{contact.email}}</td>
