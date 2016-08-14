@@ -37,6 +37,33 @@ app.delete('/contactlist2/:id', function(req, res){
 	});
 });
 
+app.get('/contactlist2/:id', function(req, res){
+	var id = req.params.id;
+	console.log("requested for edit", id);
+	db.contactlist.findOne({_id: mongojs.ObjectId(id)}, function (err, doc){
+		//console.error("Error on removing " + id + " ", err);
+		res.json(doc);
+	});
+});
+
+app.put('/contactlist2/:id', function(req, res){
+	var id = req.params.id;
+	console.log("requested for edit", id, req.body);
+	db.contactlist.findAndModify({
+		  query: { _id: mongojs.ObjectId(id)},
+			update: { $set: {
+										name: req.body.name,
+										email: req.body.email,
+										number: req.body.number
+							} },
+							new: true,
+	},
+	function(err, doc){
+				res.json(doc);
+}); // find and modify
+
+});// put
+
 var port = 8081;
 app.listen(port);
 console.log("Server running on port " + port);

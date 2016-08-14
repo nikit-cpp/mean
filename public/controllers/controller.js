@@ -39,6 +39,21 @@ myApp.controller('NikitaAppController', ['$scope', '$http',
             });
         }
 
+        // getting contact data from server to inputs
+        $scope.edit = function(id){
+          console.log("Edit", id);
+          $http.get("/contactlist2/" + id).success(function(response){
+            $scope.contact = response;
+          });
+        }
+
+        // sents new form values to server
+        $scope.update = function(){
+          console.log("Updating", $scope.contact._id);
+          $http.put("/contactlist2/" + $scope.contact._id, $scope.contact ).success(function(response){
+            refresh();
+          });
+        }
     }
 
 ]);
