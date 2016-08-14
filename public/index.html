@@ -3,7 +3,7 @@
 <head>
 	<title>Contact list app for pwn this wrld!!11</title>
 	<script src="angular/angular.js"></script>
-	
+
 	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css"/>
 
 	<!-- Optional theme -->
@@ -16,7 +16,7 @@
 	<script src="controllers/controller.js"></script>
 </head>
 <body>
-	
+
 	<div class = "container" ng-controller="NikitaAppController">
 		<h1>Контакты</h1>
 
@@ -29,12 +29,13 @@
 					<th>Экшн</th>
 				</tr>
 			</thead>
-			
+
 			<tbody>
 				<tr ng-repeat="contact in contactList3">
 					<td>{{contact.name}}</td>
 					<td>{{contact.email}}</td>
 					<td>{{contact.number}}</td>
+					<td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
 				</tr>
 
 				<tr>
@@ -47,7 +48,7 @@
 			</tbody>
 		</table>
 	</div>
-	
-	
+
+
 </body>
 </html>

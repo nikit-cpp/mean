@@ -28,6 +28,15 @@ app.post('/contactlist2', function(req, res){
     });
 });
 
+app.delete('/contactlist2/:id', function(req, res){
+	var id = req.params.id;
+	console.log("removing", id);
+	db.contactlist.remove({_id: mongojs.ObjectId(id)}, function (err, doc){
+		//console.error("Error on removing " + id + " ", err);
+		res.json(doc);
+	});
+});
+
 var port = 8081;
 app.listen(port);
 console.log("Server running on port " + port);

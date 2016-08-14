@@ -32,6 +32,13 @@ myApp.controller('NikitaAppController', ['$scope', '$http',
             });
         };
 
+        $scope.remove = function(id){
+            console.log("Removing", id);
+            $http.delete("/contactlist2/" + id).success(function(response){
+              refresh();
+            });
+        }
+
     }
 
 ]);
