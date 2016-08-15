@@ -56,7 +56,7 @@ app.put('/contactlist2/:id', function(req, res){
 										email: req.body.email,
 										number: req.body.number
 							} },
-							new: true,
+			new: true,
 	},
 	function(err, doc){
 				res.json(doc);
